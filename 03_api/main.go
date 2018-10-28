@@ -43,8 +43,6 @@ func main() {
 	// Get all sitemap urls
 	xml.Unmarshal(bytes, &s)
 
-	fmt.Println(s.Locations)
-
 	// Loop through each sitemap location
 	for _, Location := range s.Locations {
 
@@ -65,6 +63,4 @@ func main() {
 		fmt.Println("\n", data.Keyword)
 		fmt.Println("\n", data.Location)
 	}
-
-	fmt.Println("hello")
 }
