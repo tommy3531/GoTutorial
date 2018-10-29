@@ -8,7 +8,7 @@ import
 	"net/http"
 )
 
-type SiteMapIndex struct {
+type SiteMapIndex struct { 
 	Locations []string `xml:"sitemap>loc"`
 }
 
@@ -43,7 +43,9 @@ func main() {
 	// Get all sitemap urls
 	xml.Unmarshal(bytes, &s)
 
-	// Loop through each sitemap location
+	fmt.Println(s.Locations)
+
+	//Loop through each sitemap location
 	for _, Location := range s.Locations {
 
 		// Visit the sitemap
@@ -59,8 +61,8 @@ func main() {
 	}
 
 	for idx, data := range news_map {
-		fmt.Println("\n\n\n", idx)
-		fmt.Println("\n", data.Keyword)
-		fmt.Println("\n", data.Location)
+		fmt.Println("This is the index: ", idx)
+		fmt.Println("This is the keyword: ", data.Keyword)
+		fmt.Println("This is the location: ", data.Location, "\n")
 	}
 }
